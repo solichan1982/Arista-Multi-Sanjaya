@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konstruksi - PT Arista Multi Sanjaya</title>
+    <meta name="description" content="Layanan Konstruksi PT Arista Multi Sanjaya - Spesialis konstruksi industri, infrastruktur, dan bangunan komersial dengan standar kualitas internasional.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+                margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+                margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(41, 66, 149, 0.8), rgba(26, 42, 94, 0.8)), url('https://via.placeholder.com/1920x800/0066cc/ffffff?text=Construction+Services');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section h3 {
+            color: #294295;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .services-section {
+            background-color: #f8f9fa;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+        }
+        
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(41, 66, 149, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .service-card:hover .service-image::before {
+            opacity: 1;
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+        }
+        
+        .service-content h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #294295;
+            font-weight: bold;
+        }
+        
+        .expertise-section {
+            background: white;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #294295;
+            transition: all 0.3s;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .expertise-card h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .expertise-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .projects-section {
+            background-color: #f8f9fa;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ffd700;
+            color: #294295;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-content h4 {
+            color: #294295;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .project-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-stat {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .project-stat .number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #294295;
+        }
+        
+        .project-stat .label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .safety-section {
+            background: white;
+        }
+        
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .safety-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .safety-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .safety-image {
+            height: 150px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .safety-info {
+            padding: 2rem;
+        }
+        
+        .safety-info h4 {
+            color: #294295;
+            margin-bottom: 0.5rem;
+        }
+        
+        .safety-info p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            background: #ffd700;
+            color: #294295;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section h3 {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .expertise-grid,
+            .projects-grid,
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-stats {
+                grid-template-columns: 1fr;
+            }
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>PT Arista Multi Sanjaya</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="services.html">Layanan</a>
+            <a href="projects.html">Proyek</a>
+            <a href="career.html">Karir</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+            <div class="container">
+            <h2>Layanan Konstruksi</h2>
+            <p>Spesialis konstruksi industri, infrastruktur, dan bangunan komersial dengan standar kualitas internasional dan teknologi terkini.</p>
+                        </div>
+                                        </div>
+
+    <div class="section services-section">
+        <div class="container">
+            <h3>Layanan Konstruksi Kami</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">🏭</div>
+                    <div class="service-content">
+                        <h4>Konstruksi Industri</h4>
+                        <p>Konstruksi fasilitas industri dengan standar keamanan dan efisiensi tertinggi untuk berbagai sektor industri.</p>
+                        <ul class="service-features">
+                            <li>Pabrik manufaktur</li>
+                            <li>Gudang dan logistik</li>
+                            <li>Fasilitas produksi</li>
+                            <li>Pembangkit listrik</li>
+                            <li>Fasilitas petrokimia</li>
+                        </ul>
+                                    </div>
+                                        </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🏢</div>
+                    <div class="service-content">
+                        <h4>Konstruksi Komersial</h4>
+                        <p>Bangunan komersial modern dengan desain yang menarik dan fungsional untuk berbagai kebutuhan bisnis.</p>
+                        <ul class="service-features">
+                            <li>Gedung perkantoran</li>
+                            <li>Mall dan retail</li>
+                            <li>Hotel dan hospitality</li>
+                            <li>Apartemen dan residensial</li>
+                            <li>Fasilitas pendidikan</li>
+                        </ul>
+                                    </div>
+                                    </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🌉</div>
+                    <div class="service-content">
+                        <h4>Konstruksi Infrastruktur</h4>
+                        <p>Infrastruktur yang mendukung pertumbuhan ekonomi dan kesejahteraan masyarakat.</p>
+                        <ul class="service-features">
+                            <li>Jalan dan jembatan</li>
+                            <li>Pelabuhan dan bandara</li>
+                            <li>Bendungan dan irigasi</li>
+                            <li>Jaringan utilitas</li>
+                            <li>Fasilitas transportasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🔧</div>
+                    <div class="service-content">
+                        <h4>Renovasi & Rehabilitasi</h4>
+                        <p>Layanan renovasi dan rehabilitasi untuk memperbaiki dan meningkatkan fasilitas yang sudah ada.</p>
+                        <ul class="service-features">
+                            <li>Renovasi struktural</li>
+                            <li>Upgrading fasilitas</li>
+                            <li>Retrofitting</li>
+                            <li>Maintenance & repair</li>
+                            <li>Modernisasi sistem</li>
+                        </ul>
+                </div>
+            </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📐</div>
+                    <div class="service-content">
+                        <h4>Pre-Construction Services</h4>
+                        <p>Layanan pra-konstruksi untuk memastikan perencanaan yang matang dan efisien.</p>
+                        <ul class="service-features">
+                            <li>Site investigation</li>
+                            <li>Value engineering</li>
+                            <li>Constructability review</li>
+                            <li>Cost estimation</li>
+                            <li>Schedule planning</li>
+                                    </ul>
+                                </div>
+                        </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🏗️</div>
+                    <div class="service-content">
+                        <h4>Construction Management</h4>
+                        <p>Manajemen konstruksi terintegrasi untuk memastikan proyek selesai tepat waktu dan dalam anggaran.</p>
+                        <ul class="service-features">
+                            <li>Project planning</li>
+                            <li>Resource management</li>
+                            <li>Quality control</li>
+                            <li>Safety management</li>
+                            <li>Progress monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section expertise-section">
+        <div class="container">
+            <h3>Keahlian Konstruksi</h3>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h4>Teknologi Konstruksi</h4>
+                    <p>Menggunakan teknologi konstruksi terkini termasuk BIM, prefabrication, dan smart construction untuk efisiensi maksimal.</p>
+                    </div>
+                
+                <div class="expertise-card">
+                    <h4>Manajemen Kualitas</h4>
+                    <p>Sistem manajemen kualitas yang ketat untuk memastikan hasil konstruksi sesuai standar internasional.</p>
+            </div>
+                
+                <div class="expertise-card">
+                    <h4>Keselamatan Kerja</h4>
+                    <p>Prioritas utama keselamatan kerja dengan program HSE yang komprehensif untuk melindungi semua pihak.</p>
+        </div>
+                
+                <div class="expertise-card">
+                    <h4>Sustainability</h4>
+                    <p>Praktik konstruksi berkelanjutan dengan penggunaan material ramah lingkungan dan efisiensi energi.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h4>Tim Ahli</h4>
+                    <p>Tim konstruksi berpengalaman dengan sertifikasi internasional dan pengalaman proyek skala besar.</p>
+            </div>
+                
+                <div class="expertise-card">
+                    <h4>Teknologi Digital</h4>
+                    <p>Implementasi teknologi digital untuk monitoring proyek, dokumentasi, dan komunikasi yang efisien.</p>
+        </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="section projects-section">
+            <div class="container">
+            <h3>Proyek Konstruksi Unggulan</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        🏭
+                        <div class="project-badge">Industri</div>
+                </div>
+                    <div class="project-content">
+                        <h4>Pabrik Otomotif Terintegrasi</h4>
+                        <p>Konstruksi pabrik otomotif dengan kapasitas produksi 100.000 unit per tahun dan fasilitas pendukung lengkap.</p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <div class="number">$120M</div>
+                                <div class="label">Nilai Proyek</div>
+            </div>
+                            <div class="project-stat">
+                                <div class="number">20 Bulan</div>
+                                <div class="label">Durasi</div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        🏢
+                        <div class="project-badge">Komersial</div>
+                        </div>
+                    <div class="project-content">
+                        <h4>Gedung Perkantoran Premium</h4>
+                        <p>Gedung perkantoran 25 lantai dengan sertifikasi green building dan teknologi smart building.</p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <div class="number">$85M</div>
+                                <div class="label">Nilai Proyek</div>
+                        </div>
+                            <div class="project-stat">
+                                <div class="number">30 Bulan</div>
+                                <div class="label">Durasi</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        🌉
+                        <div class="project-badge">Infrastruktur</div>
+        </div>
+                    <div class="project-content">
+                        <h4>Jembatan Cable-Stayed</h4>
+                        <p>Jembatan cable-stayed dengan panjang 800 meter yang menghubungkan dua kota di Indonesia.</p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <div class="number">$95M</div>
+                                <div class="label">Nilai Proyek</div>
+                </div>
+                            <div class="project-stat">
+                                <div class="number">36 Bulan</div>
+                                <div class="label">Durasi</div>
+            </div>
+        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+    <div class="section safety-section">
+                            <div class="container">
+            <h3>Keselamatan & Kesehatan Kerja</h3>
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <div class="safety-image">🛡️</div>
+                    <div class="safety-info">
+                        <h4>Safety First</h4>
+                        <p>Prioritas utama keselamatan kerja dengan program HSE yang komprehensif dan pelatihan berkala.</p>
+                                </div>
+                                </div>
+                
+                <div class="safety-card">
+                    <div class="safety-image">👷</div>
+                    <div class="safety-info">
+                        <h4>Personal Protection</h4>
+                        <p>Penyediaan alat pelindung diri (APD) standar internasional untuk semua pekerja.</p>
+                            </div>
+                        </div>
+                
+                <div class="safety-card">
+                    <div class="safety-image">📋</div>
+                    <div class="safety-info">
+                        <h4>Safety Procedures</h4>
+                        <p>Prosedur keselamatan kerja yang ketat dan monitoring berkelanjutan di setiap tahap konstruksi.</p>
+                        </div>
+                    </div>
+                
+                <div class="safety-card">
+                    <div class="safety-image">🏥</div>
+                    <div class="safety-info">
+                        <h4>Emergency Response</h4>
+                        <p>Tim tanggap darurat 24/7 dan fasilitas medis di lokasi proyek untuk penanganan insiden.</p>
+                </div>
+            </div>
+                            </div>
+                        </div>
+                    </div>
+
+    <div class="section cta-section">
+        <div class="container">
+            <h3>Siap Membangun Bersama Kami?</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Konsultasikan kebutuhan konstruksi Anda dengan tim ahli kami dan dapatkan solusi terbaik.</p>
+            <a href="contact.html" class="cta-btn">Konsultasi Gratis</a>
+                    </div>
+                </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PT Arista Multi Sanjaya. Semua hak dilindungi.</p>
+            </div>
+        </footer>
+</body>
+</html>

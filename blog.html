@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - PT Arista Multi Sanjaya</title>
+    <meta name="description" content="Blog PT Arista Multi Sanjaya - Artikel terbaru tentang industri EPC, inovasi teknologi, dan insights seputar konstruksi dan engineering.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(41, 66, 149, 0.8), rgba(26, 42, 94, 0.8)), url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section h3 {
+            color: #294295;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .featured-post {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+        }
+        
+        .featured-image {
+            height: 400px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: #ffd700;
+            color: #294295;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .featured-content {
+            padding: 3rem;
+        }
+        
+        .featured-content h4 {
+            color: #294295;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-content p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .featured-meta {
+            display: flex;
+            gap: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        .read-more-btn {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .read-more-btn:hover {
+            background: linear-gradient(135deg, #1a2a5e 0%, #294295 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(41, 66, 149, 0.3);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .blog-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255, 215, 0, 0.9);
+            color: #294295;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .blog-content {
+            padding: 2rem;
+        }
+        
+        .blog-content h4 {
+            color: #294295;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .blog-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .blog-btn {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .blog-btn:hover {
+            background: linear-gradient(135deg, #1a2a5e 0%, #294295 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(41, 66, 149, 0.3);
+        }
+        
+        .categories-section {
+            background-color: #f8f9fa;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .category-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-item h4 {
+            color: #294295;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-section {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .newsletter-section h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            background: #ffd700;
+            color: #294295;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section h3 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .featured-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PT Arista Multi Sanjaya</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="services.html">Layanan</a>
+            <a href="projects.html">Proyek</a>
+            <a href="career.html">Karir</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Blog & Insights</h2>
+            <p>Artikel terbaru tentang industri EPC, inovasi teknologi, dan insights seputar konstruksi dan engineering dari tim ahli PT Arista Multi Sanjaya.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="featured-post">
+                <div class="featured-image">
+                    🏗️
+                    <div class="featured-badge">Artikel Utama</div>
+                </div>
+                <div class="featured-content">
+                    <h4>Masa Depan Industri EPC: Tren Teknologi dan Inovasi 2025</h4>
+                    <p>Industri EPC (Engineering, Procurement, Construction) terus berkembang dengan pesat. Artikel ini membahas tren teknologi terkini yang akan mengubah cara kita membangun di masa depan, termasuk BIM, IoT, AI, dan teknologi berkelanjutan.</p>
+                    <div class="featured-meta">
+                        <span>📅 15 Januari 2025</span>
+                        <span>👤 Tim Redaksi</span>
+                        <span>⏱️ 8 menit baca</span>
+                    </div>
+                    <a href="#" class="read-more-btn">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <h3>Artikel Terbaru</h3>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        ⚡
+                        <div class="blog-category">Energi</div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Teknologi Pembangkit Listrik Terbarukan: Solusi Masa Depan</h4>
+                        <p>Eksplorasi teknologi pembangkit listrik terbarukan yang ramah lingkungan dan efisien untuk mendukung transisi energi bersih di Indonesia.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 12 Januari 2025</div>
+                            <div class="blog-author">👤 Ahmad Rahman</div>
+                        </div>
+                        <a href="#" class="blog-btn">Baca Artikel</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        🏭
+                        <div class="blog-category">Manufaktur</div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Optimasi Proses Manufaktur dengan Industry 4.0</h4>
+                        <p>Implementasi teknologi Industry 4.0 dalam industri manufaktur untuk meningkatkan efisiensi, produktivitas, dan kualitas produksi.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 10 Januari 2025</div>
+                            <div class="blog-author">👤 Sarah Wijaya</div>
+                        </div>
+                        <a href="#" class="blog-btn">Baca Artikel</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        🏢
+                        <div class="blog-category">Konstruksi</div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Green Building: Konsep dan Implementasi di Indonesia</h4>
+                        <p>Panduan lengkap tentang konsep green building dan cara implementasinya dalam proyek konstruksi di Indonesia.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 8 Januari 2025</div>
+                            <div class="blog-author">👤 Budi Santoso</div>
+                        </div>
+                        <a href="#" class="blog-btn">Baca Artikel</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        🔧
+                        <div class="blog-category">Teknologi</div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>BIM dalam Proyek Konstruksi: Manfaat dan Implementasi</h4>
+                        <p>Building Information Modeling (BIM) mengubah cara perencanaan dan eksekusi proyek konstruksi modern.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 5 Januari 2025</div>
+                            <div class="blog-author">👤 Rina Kartika</div>
+                        </div>
+                        <a href="#" class="blog-btn">Baca Artikel</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        🌱
+                        <div class="blog-category">Keberlanjutan</div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Sustainable Construction: Praktik Ramah Lingkungan</h4>
+                        <p>Praktik konstruksi berkelanjutan yang dapat diterapkan untuk mengurangi dampak lingkungan dari proyek konstruksi.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 3 Januari 2025</div>
+                            <div class="blog-author">👤 Dedi Kurniawan</div>
+                        </div>
+                        <a href="#" class="blog-btn">Baca Artikel</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        📊
+                        <div class="blog-category">Analisis</div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Analisis Tren Pasar EPC Indonesia 2025</h4>
+                        <p>Analisis mendalam tentang tren pasar EPC di Indonesia dan peluang bisnis yang dapat dimanfaatkan.</p>
+                        <div class="blog-meta">
+                            <div class="blog-date">📅 1 Januari 2025</div>
+                            <div class="blog-author">👤 Tim Analisis</div>
+                        </div>
+                        <a href="#" class="blog-btn">Baca Artikel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section categories-section">
+        <div class="container">
+            <h3>Kategori Artikel</h3>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <div class="category-icon">🏗️</div>
+                    <h4>Konstruksi</h4>
+                    <p>Artikel seputar teknologi konstruksi, metode kerja, dan inovasi dalam pembangunan.</p>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon">⚡</div>
+                    <h4>Energi</h4>
+                    <p>Insights tentang pembangkit listrik, energi terbarukan, dan efisiensi energi.</p>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon">🏭</div>
+                    <h4>Manufaktur</h4>
+                    <p>Artikel tentang industri manufaktur, otomasi, dan optimasi produksi.</p>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon">🔧</div>
+                    <h4>Teknologi</h4>
+                    <p>Teknologi terkini dalam industri EPC dan implementasinya.</p>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon">🌱</div>
+                    <h4>Keberlanjutan</h4>
+                    <p>Praktik ramah lingkungan dan pembangunan berkelanjutan.</p>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-icon">📊</div>
+                    <h4>Analisis</h4>
+                    <p>Analisis pasar, tren industri, dan peluang bisnis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section newsletter-section">
+        <div class="container">
+            <h3>Berlangganan Newsletter</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Dapatkan artikel terbaru dan insights industri langsung ke email Anda.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Masukkan email Anda" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Berlangganan</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PT Arista Multi Sanjaya. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html> 

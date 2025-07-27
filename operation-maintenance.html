@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operasi & Pemeliharaan - PT Arista Multi Sanjaya</title>
+    <meta name="description" content="Layanan Operasi & Pemeliharaan PT Arista Multi Sanjaya - Memastikan fasilitas berjalan optimal dengan efisiensi tinggi dan downtime minimal.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(41, 66, 149, 0.8), rgba(26, 42, 94, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section h3 {
+            color: #294295;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .services-section {
+            background-color: #f8f9fa;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+        }
+        
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(41, 66, 149, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .service-card:hover .service-image::before {
+            opacity: 1;
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+        }
+        
+        .service-content h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #294295;
+            font-weight: bold;
+        }
+        
+        .benefits-section {
+            background: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #294295;
+            transition: all 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .process-section {
+            background-color: #f8f9fa;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #294295;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .process-step:nth-child(1)::before {
+            content: '1';
+        }
+        
+        .process-step:nth-child(2)::before {
+            content: '2';
+        }
+        
+        .process-step:nth-child(3)::before {
+            content: '3';
+        }
+        
+        .process-step:nth-child(4)::before {
+            content: '4';
+        }
+        
+        .process-step h4 {
+            color: #294295;
+            margin: 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .process-step p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .technology-section {
+            background: white;
+        }
+        
+        .technology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .tech-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tech-image {
+            height: 150px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .tech-info {
+            padding: 2rem;
+        }
+        
+        .tech-info h4 {
+            color: #294295;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-info p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            background: #ffd700;
+            color: #294295;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section h3 {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .benefits-grid,
+            .process-grid,
+            .technology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PT Arista Multi Sanjaya</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="services.html">Layanan</a>
+            <a href="projects.html">Proyek</a>
+            <a href="career.html">Karir</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Operasi & Pemeliharaan</h2>
+            <p>Memastikan fasilitas industri Anda berjalan optimal dengan efisiensi tinggi, downtime minimal, dan performa maksimal melalui layanan O&M yang komprehensif.</p>
+        </div>
+    </div>
+
+    <div class="section services-section">
+        <div class="container">
+            <h3>Layanan O&M Kami</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">⚙️</div>
+                    <div class="service-content">
+                        <h4>Operasi Fasilitas</h4>
+                        <p>Mengelola operasi harian fasilitas industri dengan standar keamanan dan efisiensi tertinggi.</p>
+                        <ul class="service-features">
+                            <li>Pengelolaan shift operasi 24/7</li>
+                            <li>Monitoring real-time sistem</li>
+                            <li>Optimasi parameter operasi</li>
+                            <li>Manajemen tenaga kerja</li>
+                            <li>Pelaporan performa harian</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🔧</div>
+                    <div class="service-content">
+                        <h4>Pemeliharaan Preventif</h4>
+                        <p>Program pemeliharaan terjadwal untuk mencegah kerusakan dan memastikan umur pakai peralatan optimal.</p>
+                        <ul class="service-features">
+                            <li>Jadwal pemeliharaan terjadwal</li>
+                            <li>Inspeksi rutin peralatan</li>
+                            <li>Penggantian komponen preventif</li>
+                            <li>Kalibrasi dan testing</li>
+                            <li>Dokumentasi pemeliharaan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📊</div>
+                    <div class="service-content">
+                        <h4>Pemeliharaan Prediktif</h4>
+                        <p>Menggunakan teknologi IoT dan AI untuk memprediksi kerusakan sebelum terjadi.</p>
+                        <ul class="service-features">
+                            <li>Monitoring kondisi peralatan</li>
+                            <li>Analisis data sensor</li>
+                            <li>Prediksi kerusakan</li>
+                            <li>Optimasi jadwal maintenance</li>
+                            <li>Pengurangan downtime</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🏢</div>
+                    <div class="service-content">
+                        <h4>Manajemen Aset</h4>
+                        <p>Pengelolaan aset fasilitas secara komprehensif untuk optimasi investasi dan performa.</p>
+                        <ul class="service-features">
+                            <li>Inventarisasi aset lengkap</li>
+                            <li>Tracking lifecycle peralatan</li>
+                            <li>Analisis biaya perawatan</li>
+                            <li>Perencanaan penggantian</li>
+                            <li>Optimasi investasi aset</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📈</div>
+                    <div class="service-content">
+                        <h4>Optimasi Performa</h4>
+                        <p>Meningkatkan efisiensi dan produktivitas fasilitas melalui analisis dan perbaikan berkelanjutan.</p>
+                        <ul class="service-features">
+                            <li>Analisis KPI fasilitas</li>
+                            <li>Identifikasi bottleneck</li>
+                            <li>Implementasi perbaikan</li>
+                            <li>Monitoring hasil optimasi</li>
+                            <li>Pelaporan performa</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🛠️</div>
+                    <div class="service-content">
+                        <h4>Emergency Response</h4>
+                        <p>Tim respons cepat 24/7 untuk menangani situasi darurat dan gangguan operasi.</p>
+                        <ul class="service-features">
+                            <li>Tim darurat 24/7</li>
+                            <li>Response time < 2 jam</li>
+                            <li>Spare parts kritis</li>
+                            <li>Koordinasi dengan klien</li>
+                            <li>Dokumentasi insiden</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section benefits-section">
+        <div class="container">
+            <h3>Manfaat Layanan O&M</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Efisiensi Tinggi</h4>
+                    <p>Optimasi operasi menghasilkan efisiensi energi dan bahan baku yang lebih baik, mengurangi biaya operasional.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h4>Downtime Minimal</h4>
+                    <p>Program pemeliharaan preventif dan prediktif mengurangi waktu henti dan meningkatkan produktivitas.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h4>Umur Pakai Optimal</h4>
+                    <p>Pemeliharaan berkala memperpanjang umur pakai peralatan dan mengurangi biaya penggantian.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h4>Keselamatan Terjamin</h4>
+                    <p>Standar keselamatan tinggi dalam setiap operasi dan pemeliharaan untuk melindungi karyawan dan aset.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h4>Kepatuhan Regulasi</h4>
+                    <p>Memastikan fasilitas memenuhi semua regulasi dan standar industri yang berlaku.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h4>ROI Maksimal</h4>
+                    <p>Investasi dalam O&M yang tepat menghasilkan return on investment yang optimal dalam jangka panjang.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section process-section">
+        <div class="container">
+            <h3>Proses Kerja O&M</h3>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h4>Assessment</h4>
+                    <p>Evaluasi kondisi fasilitas dan peralatan untuk menentukan kebutuhan O&M yang tepat.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Perencanaan</h4>
+                    <p>Menyusun program O&M yang disesuaikan dengan karakteristik fasilitas dan kebutuhan klien.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Implementasi</h4>
+                    <p>Melaksanakan program O&M dengan tim ahli dan teknologi terkini sesuai standar tertinggi.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Monitoring</h4>
+                    <p>Pemantauan berkelanjutan dan pelaporan performa untuk memastikan hasil optimal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section technology-section">
+        <div class="container">
+            <h3>Teknologi yang Kami Gunakan</h3>
+            <div class="technology-grid">
+                <div class="tech-card">
+                    <div class="tech-image">📱</div>
+                    <div class="tech-info">
+                        <h4>IoT Sensors</h4>
+                        <p>Sensor cerdas untuk monitoring real-time kondisi peralatan dan sistem.</p>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-image">🤖</div>
+                    <div class="tech-info">
+                        <h4>AI & Machine Learning</h4>
+                        <p>Algoritma AI untuk prediksi kerusakan dan optimasi performa.</p>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-image">☁️</div>
+                    <div class="tech-info">
+                        <h4>Cloud Platform</h4>
+                        <p>Platform cloud untuk data management dan analisis performa.</p>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-image">📊</div>
+                    <div class="tech-info">
+                        <h4>Analytics Dashboard</h4>
+                        <p>Dashboard analitik untuk monitoring KPI dan performa fasilitas.</p>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-image">🔧</div>
+                    <div class="tech-info">
+                        <h4>Mobile Apps</h4>
+                        <p>Aplikasi mobile untuk tim lapangan dan manajemen O&M.</p>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-image">📋</div>
+                    <div class="tech-info">
+                        <h4>Digital Documentation</h4>
+                        <p>Sistem dokumentasi digital untuk tracking dan pelaporan O&M.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section cta-section">
+        <div class="container">
+            <h3>Siap Optimalkan Fasilitas Anda?</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Konsultasikan kebutuhan O&M Anda dengan tim ahli kami dan dapatkan solusi terbaik.</p>
+            <a href="contact.html" class="cta-btn">Konsultasi Gratis</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PT Arista Multi Sanjaya. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html> 

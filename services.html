@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - PT Arista Multi Sanjaya</title>
+    <meta name="description" content="PT Arista Multi Sanjaya menyediakan layanan EPC, Konstruksi, Operasi & Pemeliharaan, dan Investasi dengan kualitas terbaik dan pengalaman lebih dari 30 tahun.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(41, 66, 149, 0.8), rgba(26, 42, 94, 0.8)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section h3 {
+            color: #294295;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-image {
+            height: 250px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(41, 66, 149, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .service-card:hover .service-image::before {
+            opacity: 1;
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+        }
+        
+        .service-content h4 {
+            color: #294295;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #294295;
+            font-weight: bold;
+        }
+        
+        .service-btn {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .service-btn:hover {
+            background: linear-gradient(135deg, #1a2a5e 0%, #294295 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(41, 66, 149, 0.3);
+        }
+        
+        .process-section {
+            background-color: #f8f9fa;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #294295;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .process-step:nth-child(1)::before {
+            content: '1';
+        }
+        
+        .process-step:nth-child(2)::before {
+            content: '2';
+        }
+        
+        .process-step:nth-child(3)::before {
+            content: '3';
+        }
+        
+        .process-step:nth-child(4)::before {
+            content: '4';
+        }
+        
+        .process-step h4 {
+            color: #294295;
+            margin: 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .process-step p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .expertise-section {
+            background: white;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #294295;
+            transition: all 0.3s;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .expertise-card h4 {
+            color: #294295;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .expertise-card p {
+            color: #666;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            background: #ffd700;
+            color: #294295;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section h3 {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .process-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PT Arista Multi Sanjaya</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="services.html">Layanan</a>
+            <a href="projects.html">Proyek</a>
+            <a href="career.html">Karir</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Layanan Unggulan Kami</h2>
+            <p>PT Arista Multi Sanjaya menyediakan solusi EPC terintegrasi dengan pengalaman lebih dari 30 tahun dalam industri konstruksi, operasi & pemeliharaan, dan investasi.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h3>Layanan Utama</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">🏗️</div>
+                    <div class="service-content">
+                        <h4>EPC (Engineering, Procurement, Construction)</h4>
+                        <p>Layanan EPC terintegrasi yang mencakup perencanaan, pengadaan, dan konstruksi dengan standar kualitas tertinggi dan efisiensi maksimal.</p>
+                        <ul class="service-features">
+                            <li>Perencanaan dan desain teknik</li>
+                            <li>Pengadaan material dan peralatan</li>
+                            <li>Konstruksi dan instalasi</li>
+                            <li>Quality control dan testing</li>
+                            <li>Commissioning dan handover</li>
+                        </ul>
+                        <a href="epc.html" class="service-btn">Pelajari Lebih Lanjut</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🏢</div>
+                    <div class="service-content">
+                        <h4>Konstruksi</h4>
+                        <p>Layanan konstruksi komprehensif untuk berbagai jenis proyek dengan fokus pada kualitas, keselamatan, dan penyelesaian tepat waktu.</p>
+                        <ul class="service-features">
+                            <li>Konstruksi bangunan industri</li>
+                            <li>Infrastruktur dan jalan</li>
+                            <li>Pabrik dan gudang</li>
+                            <li>Gedung perkantoran</li>
+                            <li>Fasilitas komersial</li>
+                        </ul>
+                        <a href="contruction.html" class="service-btn">Pelajari Lebih Lanjut</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">⚙️</div>
+                    <div class="service-content">
+                        <h4>Operasi & Pemeliharaan</h4>
+                        <p>Layanan operasi dan pemeliharaan yang memastikan fasilitas berjalan optimal dengan efisiensi tinggi dan downtime minimal.</p>
+                        <ul class="service-features">
+                            <li>Operasi fasilitas industri</li>
+                            <li>Pemeliharaan preventif</li>
+                            <li>Pemeliharaan prediktif</li>
+                            <li>Manajemen aset</li>
+                            <li>Optimasi performa</li>
+                        </ul>
+                        <a href="operation-maintenance.html" class="service-btn">Pelajari Lebih Lanjut</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">💰</div>
+                    <div class="service-content">
+                        <h4>Investasi</h4>
+                        <p>Layanan investasi strategis untuk pengembangan proyek dengan analisis risiko yang komprehensif dan return on investment yang optimal.</p>
+                        <ul class="service-features">
+                            <li>Analisis kelayakan proyek</li>
+                            <li>Struktur pembiayaan</li>
+                            <li>Manajemen risiko</li>
+                            <li>Due diligence</li>
+                            <li>Monitoring investasi</li>
+                        </ul>
+                        <a href="investment.html" class="service-btn">Pelajari Lebih Lanjut</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section process-section">
+        <div class="container">
+            <h3>Proses Kerja Kami</h3>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h4>Konsultasi</h4>
+                    <p>Mendengarkan kebutuhan klien dan memberikan solusi yang sesuai dengan visi dan anggaran proyek.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Perencanaan</h4>
+                    <p>Menyusun rencana detail dengan timeline, anggaran, dan spesifikasi teknis yang jelas.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Eksekusi</h4>
+                    <p>Melaksanakan proyek dengan tim ahli dan teknologi terkini sesuai standar kualitas tertinggi.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Serah Terima</h4>
+                    <p>Menyerahkan proyek yang telah selesai dengan dokumentasi lengkap dan dukungan purna jual.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section expertise-section">
+        <div class="container">
+            <h3>Keahlian Kami</h3>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h4>Teknologi Terkini</h4>
+                    <p>Menggunakan teknologi BIM, IoT, dan AI untuk meningkatkan efisiensi dan akurasi dalam setiap proyek.</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>Tim Ahli</h4>
+                    <p>Didukung oleh tim profesional dengan pengalaman puluhan tahun di berbagai sektor industri.</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>Standar Kualitas</h4>
+                    <p>Menerapkan standar kualitas internasional ISO 9001, ISO 14001, dan OHSAS 18001.</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>Keberlanjutan</h4>
+                    <p>Berkomitmen pada pembangunan berkelanjutan dengan praktik ramah lingkungan.</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>Inovasi</h4>
+                    <p>Terus berinovasi dalam metode kerja dan teknologi untuk memberikan solusi terbaik.</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>Keselamatan</h4>
+                    <p>Mengutamakan keselamatan kerja dengan program HSE yang komprehensif.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section cta-section">
+        <div class="container">
+            <h3>Siap Memulai Proyek Anda?</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Konsultasikan kebutuhan proyek Anda dengan tim ahli kami dan dapatkan solusi terbaik.</p>
+            <a href="contact.html" class="cta-btn">Konsultasi Gratis</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PT Arista Multi Sanjaya. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html> 

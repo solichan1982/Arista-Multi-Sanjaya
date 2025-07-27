@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karir - PT Arista Multi Sanjaya</title>
+    <meta name="description" content="Bergabunglah dengan tim PT Arista Multi Sanjaya. Kami menawarkan peluang karir yang menarik dengan lingkungan kerja yang mendukung pertumbuhan profesional.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(41, 66, 149, 0.8), rgba(26, 42, 94, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section h3 {
+            color: #294295;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-card h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefits-section {
+            background-color: #f8f9fa;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-item h4 {
+            color: #294295;
+            margin-bottom: 1rem;
+        }
+        
+        .job-opportunities {
+            background: white;
+        }
+        
+        .job-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.3s;
+        }
+        
+        .job-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-card h4 {
+            color: #294295;
+            margin-bottom: 1rem;
+        }
+        
+        .job-meta {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            color: #666;
+        }
+        
+        .apply-btn {
+            background: #294295;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .apply-btn:hover {
+            background: #1a2a5e;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .contact-item h4 {
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+            
+            .section h3 {
+                font-size: 1.5rem;
+            }
+            
+            .values-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PT Arista Multi Sanjaya</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="services.html">Layanan</a>
+            <a href="projects.html">Proyek</a>
+            <a href="career.html">Karir</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Bergabunglah dengan Tim Kami</h2>
+            <p>Membangun masa depan bersama PT Arista Multi Sanjaya. Kami mencari talenta-talenta terbaik yang siap berkontribusi dalam pertumbuhan perusahaan dan pengembangan industri EPC di Indonesia.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h3>Mengapa Bergabung dengan Kami?</h3>
+            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">
+                PT Arista Multi Sanjaya adalah perusahaan yang mengutamakan pertumbuhan profesional, inovasi, dan kontribusi positif terhadap masyarakat. Kami menawarkan lingkungan kerja yang mendukung dan peluang karir yang menarik.
+            </p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>Kerja Keras</h4>
+                    <p>Dedikasikan diri sepenuhnya untuk setiap tugas dengan usaha dan waktu yang diperlukan untuk mencapai tujuan.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Kerja Cerdas</h4>
+                    <p>Merencanakan dan memprioritaskan tugas secara strategis untuk memaksimalkan efisiensi dan produktivitas.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Kerja Tuntas</h4>
+                    <p>Memperhatikan detail dan memastikan setiap aspek pekerjaan diselesaikan dengan kualitas dan presisi tinggi.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Kerja Ikhlas</h4>
+                    <p>Mendekati pekerjaan dengan kejujuran, integritas, dan komitmen yang tulus untuk memberikan yang terbaik.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section benefits-section">
+        <div class="container">
+            <h3>Manfaat Bergabung dengan Tim Kami</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>Lingkungan Berorientasi Komunitas</h4>
+                    <p>Nikmati budaya yang dibangun atas kerja tim, integritas, dan dampak positif. Kami menumbuhkan rasa memiliki dan persahabatan, di mana setiap anggota tim dihargai dan didukung.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Kontribusi yang Bermakna</h4>
+                    <p>Terlibat dalam proyek yang melampaui profitabilitas, membuat perbedaan yang bertahan lama dalam komunitas. Pekerjaan Anda akan berorientasi tujuan, menawarkan rasa puas dan kepuasan.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Pengembangan Berkelanjutan</h4>
+                    <p>Prioritaskan pertumbuhan dan kesejahteraan Anda dengan komitmen kami terhadap umpan balik dan kepuasan karyawan. Kami menyediakan banyak peluang untuk pengembangan profesional.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Kemitraan Kolaboratif</h4>
+                    <p>Bergabunglah dengan kami dalam menumbuhkan budaya pertumbuhan dan kemitraan saat kami beraspirasi menjadi perusahaan global terkemuka. Bersama-sama, kita dapat mencapai hasil yang luar biasa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section job-opportunities">
+        <div class="container">
+            <h3>Peluang Karir Terbuka</h3>
+            <p style="text-align: center; margin-bottom: 3rem;">
+                Saat ini kami membuka beberapa posisi untuk talenta-talenta terbaik. Jika Anda tertarik dengan salah satu posisi di bawah ini, silakan kirimkan lamaran Anda.
+            </p>
+            
+            <div class="job-card">
+                <h4>Senior Project Manager</h4>
+                <div class="job-meta">
+                    <span><strong>Lokasi:</strong> Jakarta</span>
+                    <span><strong>Pengalaman:</strong> 8+ tahun</span>
+                    <span><strong>Jenis:</strong> Full-time</span>
+                </div>
+                <p>Bertanggung jawab untuk mengelola proyek EPC skala besar, memastikan penyelesaian tepat waktu dan sesuai anggaran. Memimpin tim proyek dan berkoordinasi dengan stakeholder.</p>
+                <a href="mailto:hr@aristamultisanjaya.com?subject=Lamaran Senior Project Manager" class="apply-btn">Kirim Lamaran</a>
+            </div>
+            
+            <div class="job-card">
+                <h4>Engineer Konstruksi</h4>
+                <div class="job-meta">
+                    <span><strong>Lokasi:</strong> Jakarta/Site</span>
+                    <span><strong>Pengalaman:</strong> 3-5 tahun</span>
+                    <span><strong>Jenis:</strong> Full-time</span>
+                </div>
+                <p>Bertanggung jawab untuk perencanaan, desain, dan pengawasan konstruksi. Memastikan kualitas dan keselamatan dalam setiap tahap proyek konstruksi.</p>
+                <a href="mailto:hr@aristamultisanjaya.com?subject=Lamaran Engineer Konstruksi" class="apply-btn">Kirim Lamaran</a>
+            </div>
+            
+            <div class="job-card">
+                <h4>HSE Officer</h4>
+                <div class="job-meta">
+                    <span><strong>Lokasi:</strong> Jakarta/Site</span>
+                    <span><strong>Pengalaman:</strong> 2-4 tahun</span>
+                    <span><strong>Jenis:</strong> Full-time</span>
+                </div>
+                <p>Memastikan kepatuhan terhadap standar keselamatan dan kesehatan kerja. Mengembangkan dan mengimplementasikan program HSE yang efektif.</p>
+                <a href="mailto:hr@aristamultisanjaya.com?subject=Lamaran HSE Officer" class="apply-btn">Kirim Lamaran</a>
+            </div>
+            
+            <div class="job-card">
+                <h4>Business Development</h4>
+                <div class="job-meta">
+                    <span><strong>Lokasi:</strong> Jakarta</span>
+                    <span><strong>Pengalaman:</strong> 5+ tahun</span>
+                    <span><strong>Jenis:</strong> Full-time</span>
+                </div>
+                <p>Mengidentifikasi dan mengembangkan peluang bisnis baru. Membangun dan memelihara hubungan dengan klien dan mitra strategis.</p>
+                <a href="mailto:hr@aristamultisanjaya.com?subject=Lamaran Business Development" class="apply-btn">Kirim Lamaran</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section contact-section">
+        <div class="container">
+            <h3>Hubungi Tim HR Kami</h3>
+            <p style="margin-bottom: 3rem;">
+                Jika Anda tertarik bergabung dengan tim kami atau memiliki pertanyaan tentang peluang karir, silakan hubungi tim HR kami.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hr@aristamultisanjaya.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Telepon</h4>
+                    <p>(+62) 21 750 3355</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Alamat</h4>
+                    <p>Jakarta, Indonesia</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <p><strong>Catatan:</strong> Harap sertakan CV, surat lamaran, dan dokumen pendukung lainnya dalam lamaran Anda.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PT Arista Multi Sanjaya. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPC - PT Arista Multi Sanjaya</title>
+    <meta name="description" content="Layanan EPC (Engineering, Procurement, Construction) PT Arista Multi Sanjaya - Solusi lengkap dari perencanaan hingga konstruksi dengan standar internasional.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+                margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+                margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(41, 66, 149, 0.8), rgba(26, 42, 94, 0.8)), url('https://via.placeholder.com/1920x800/0066cc/ffffff?text=EPC+Services');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section h3 {
+            color: #294295;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .services-section {
+            background-color: #f8f9fa;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+        }
+        
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(41, 66, 149, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .service-card:hover .service-image::before {
+            opacity: 1;
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+        }
+        
+        .service-content h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #294295;
+            font-weight: bold;
+        }
+        
+        .process-section {
+            background: white;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #294295;
+            transition: all 0.3s;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-step h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .process-step p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .projects-section {
+            background-color: #f8f9fa;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ffd700;
+            color: #294295;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-content h4 {
+            color: #294295;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .project-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-stat {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .project-stat .number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #294295;
+        }
+        
+        .project-stat .label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            background: #ffd700;
+            color: #294295;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section h3 {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .process-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-stats {
+                grid-template-columns: 1fr;
+            }
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>PT Arista Multi Sanjaya</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="services.html">Layanan</a>
+            <a href="projects.html">Proyek</a>
+            <a href="career.html">Karir</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+            <div class="container">
+            <h2>Layanan EPC</h2>
+            <p>Solusi lengkap Engineering, Procurement, Construction dengan standar internasional untuk proyek-proyek skala besar dan kompleks.</p>
+                        </div>
+                                        </div>
+
+    <div class="section services-section">
+        <div class="container">
+            <h3>Layanan EPC Kami</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">📐</div>
+                    <div class="service-content">
+                        <h4>Engineering</h4>
+                        <p>Perencanaan dan desain teknis yang detail dan komprehensif untuk memastikan kelayakan dan efisiensi proyek.</p>
+                        <ul class="service-features">
+                            <li>Detail engineering design</li>
+                            <li>Process engineering</li>
+                            <li>Mechanical engineering</li>
+                            <li>Electrical engineering</li>
+                            <li>Civil & structural engineering</li>
+                        </ul>
+                                    </div>
+                                        </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📦</div>
+                    <div class="service-content">
+                        <h4>Procurement</h4>
+                        <p>Pengadaan material, peralatan, dan jasa dengan standar kualitas tinggi dan pengelolaan supply chain yang efisien.</p>
+                        <ul class="service-features">
+                            <li>Vendor management</li>
+                            <li>Material procurement</li>
+                            <li>Equipment sourcing</li>
+                            <li>Quality control</li>
+                            <li>Logistics management</li>
+                        </ul>
+                                    </div>
+                                    </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🏗️</div>
+                    <div class="service-content">
+                        <h4>Construction</h4>
+                        <p>Eksekusi konstruksi dengan tim ahli, teknologi terkini, dan standar keselamatan tertinggi.</p>
+                        <ul class="service-features">
+                            <li>Site preparation</li>
+                            <li>Foundation work</li>
+                            <li>Structural erection</li>
+                            <li>Mechanical installation</li>
+                            <li>Commissioning & testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📊</div>
+                    <div class="service-content">
+                        <h4>Project Management</h4>
+                        <p>Manajemen proyek terintegrasi untuk memastikan penyelesaian tepat waktu, dalam anggaran, dan sesuai spesifikasi.</p>
+                        <ul class="service-features">
+                            <li>Schedule management</li>
+                            <li>Cost control</li>
+                            <li>Quality assurance</li>
+                            <li>Risk management</li>
+                            <li>Stakeholder coordination</li>
+                        </ul>
+                </div>
+            </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🔧</div>
+                    <div class="service-content">
+                        <h4>Commissioning</h4>
+                        <p>Proses commissioning dan start-up untuk memastikan fasilitas beroperasi optimal sesuai desain.</p>
+                        <ul class="service-features">
+                            <li>Pre-commissioning</li>
+                            <li>Mechanical completion</li>
+                            <li>Performance testing</li>
+                            <li>Handover documentation</li>
+                            <li>Operator training</li>
+                                    </ul>
+                                </div>
+                        </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📋</div>
+                    <div class="service-content">
+                        <h4>Documentation</h4>
+                        <p>Dokumentasi lengkap proyek termasuk as-built drawings, operation manuals, dan maintenance procedures.</p>
+                        <ul class="service-features">
+                            <li>As-built drawings</li>
+                            <li>Operation manuals</li>
+                            <li>Maintenance procedures</li>
+                            <li>Safety documentation</li>
+                            <li>Quality records</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section process-section">
+        <div class="container">
+            <h3>Proses Kerja EPC</h3>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h4>1. Feasibility Study</h4>
+                    <p>Studi kelayakan teknis dan ekonomis untuk memastikan proyek layak dilaksanakan.</p>
+                    </div>
+                
+                <div class="process-step">
+                    <h4>2. Basic Engineering</h4>
+                    <p>Perencanaan dasar dan desain konseptual sesuai dengan kebutuhan dan spesifikasi klien.</p>
+            </div>
+                
+                <div class="process-step">
+                    <h4>3. Detailed Engineering</h4>
+                    <p>Desain detail yang komprehensif untuk semua aspek teknis proyek.</p>
+        </div>
+                
+                <div class="process-step">
+                    <h4>4. Procurement</h4>
+                    <p>Pengadaan material, peralatan, dan jasa sesuai dengan spesifikasi dan jadwal proyek.</p>
+                </div>
+                
+                <div class="process-step">
+                    <h4>5. Construction</h4>
+                    <p>Eksekusi konstruksi dengan standar kualitas dan keselamatan tertinggi.</p>
+            </div>
+                
+                <div class="process-step">
+                    <h4>6. Commissioning</h4>
+                    <p>Testing, commissioning, dan handover fasilitas kepada klien.</p>
+        </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="section projects-section">
+            <div class="container">
+            <h3>Proyek EPC Unggulan</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        🏭
+                        <div class="project-badge">Manufaktur</div>
+                </div>
+                    <div class="project-content">
+                        <h4>Pabrik Petrokimia Terintegrasi</h4>
+                        <p>Proyek EPC pabrik petrokimia skala besar dengan kapasitas produksi 500.000 ton per tahun.</p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <div class="number">$200M</div>
+                                <div class="label">Nilai Proyek</div>
+            </div>
+                            <div class="project-stat">
+                                <div class="number">24 Bulan</div>
+                                <div class="label">Durasi</div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        ⚡
+                        <div class="project-badge">Energi</div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Pembangkit Listrik Tenaga Gas</h4>
+                        <p>Pembangkit listrik 500 MW dengan teknologi combined cycle yang efisien dan ramah lingkungan.</p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <div class="number">$150M</div>
+                                <div class="label">Nilai Proyek</div>
+                </div>
+                            <div class="project-stat">
+                                <div class="number">18 Bulan</div>
+                                <div class="label">Durasi</div>
+            </div>
+        </div>
+                </div>
+            </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        🏢
+                        <div class="project-badge">Infrastruktur</div>
+        </div>
+                    <div class="project-content">
+                        <h4>Gedung Perkantoran Premium</h4>
+                        <p>Gedung perkantoran 30 lantai dengan sertifikasi green building dan teknologi smart building.</p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <div class="number">$80M</div>
+                                <div class="label">Nilai Proyek</div>
+                                    </div>
+                            <div class="project-stat">
+                                <div class="number">36 Bulan</div>
+                                <div class="label">Durasi</div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                                </div>
+                                </div>
+                            </div>
+
+    <div class="section cta-section">
+        <div class="container">
+            <h3>Siap Memulai Proyek EPC Anda?</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Konsultasikan kebutuhan proyek EPC Anda dengan tim ahli kami dan dapatkan solusi terbaik.</p>
+            <a href="contact.html" class="cta-btn">Konsultasi Gratis</a>
+                        </div>
+                        </div>
+
+    <footer>
+                <div class="container">
+            <p>&copy; 2025 PT Arista Multi Sanjaya. Semua hak dilindungi.</p>
+            </div>
+        </footer>
+</body>
+</html>

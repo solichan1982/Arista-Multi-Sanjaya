@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investasi - PT Arista Multi Sanjaya</title>
+    <meta name="description" content="Layanan Investasi PT Arista Multi Sanjaya - Solusi investasi strategis untuk pengembangan proyek dengan analisis risiko komprehensif dan ROI optimal.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(41, 66, 149, 0.8), rgba(26, 42, 94, 0.8)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section h3 {
+            color: #294295;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .services-section {
+            background-color: #f8f9fa;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+        }
+        
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(41, 66, 149, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .service-card:hover .service-image::before {
+            opacity: 1;
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+        }
+        
+        .service-content h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #294295;
+            font-weight: bold;
+        }
+        
+        .approach-section {
+            background: white;
+        }
+        
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .approach-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #294295;
+            transition: all 0.3s;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .approach-card h4 {
+            color: #294295;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .approach-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .portfolio-section {
+            background-color: #f8f9fa;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .portfolio-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ffd700;
+            color: #294295;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .portfolio-content {
+            padding: 2rem;
+        }
+        
+        .portfolio-content h4 {
+            color: #294295;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .portfolio-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-stat {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .portfolio-stat .number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #294295;
+        }
+        
+        .portfolio-stat .label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .risk-section {
+            background: white;
+        }
+        
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .risk-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .risk-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .risk-image {
+            height: 150px;
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .risk-info {
+            padding: 2rem;
+        }
+        
+        .risk-info h4 {
+            color: #294295;
+            margin-bottom: 0.5rem;
+        }
+        
+        .risk-info p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #294295 0%, #1a2a5e 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            background: #ffd700;
+            color: #294295;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section h3 {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .approach-grid,
+            .portfolio-grid,
+            .risk-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PT Arista Multi Sanjaya</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="services.html">Layanan</a>
+            <a href="projects.html">Proyek</a>
+            <a href="career.html">Karir</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Layanan Investasi</h2>
+            <p>Solusi investasi strategis untuk pengembangan proyek dengan analisis risiko komprehensif, struktur pembiayaan optimal, dan return on investment yang maksimal.</p>
+        </div>
+    </div>
+
+    <div class="section services-section">
+        <div class="container">
+            <h3>Layanan Investasi Kami</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">📊</div>
+                    <div class="service-content">
+                        <h4>Analisis Kelayakan Proyek</h4>
+                        <p>Evaluasi komprehensif kelayakan proyek dari aspek teknis, finansial, dan komersial.</p>
+                        <ul class="service-features">
+                            <li>Studi kelayakan teknis</li>
+                            <li>Analisis finansial mendalam</li>
+                            <li>Studi pasar dan kompetisi</li>
+                            <li>Analisis risiko proyek</li>
+                            <li>Rekomendasi investasi</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">💰</div>
+                    <div class="service-content">
+                        <h4>Struktur Pembiayaan</h4>
+                        <p>Merancang struktur pembiayaan optimal yang sesuai dengan karakteristik proyek dan kebutuhan investor.</p>
+                        <ul class="service-features">
+                            <li>Struktur debt-equity optimal</li>
+                            <li>Negosiasi dengan lembaga keuangan</li>
+                            <li>Syndicated financing</li>
+                            <li>Project financing</li>
+                            <li>Struktur SPV</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🛡️</div>
+                    <div class="service-content">
+                        <h4>Manajemen Risiko</h4>
+                        <p>Identifikasi, analisis, dan mitigasi risiko investasi untuk memastikan keberhasilan proyek.</p>
+                        <ul class="service-features">
+                            <li>Risk assessment komprehensif</li>
+                            <li>Strategi mitigasi risiko</li>
+                            <li>Insurance planning</li>
+                            <li>Contingency planning</li>
+                            <li>Monitoring risiko berkelanjutan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🔍</div>
+                    <div class="service-content">
+                        <h4>Due Diligence</h4>
+                        <p>Proses investigasi mendalam untuk memastikan semua aspek proyek telah dievaluasi dengan teliti.</p>
+                        <ul class="service-features">
+                            <li>Legal due diligence</li>
+                            <li>Financial due diligence</li>
+                            <li>Technical due diligence</li>
+                            <li>Environmental due diligence</li>
+                            <li>Commercial due diligence</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📈</div>
+                    <div class="service-content">
+                        <h4>Monitoring Investasi</h4>
+                        <p>Pemantauan berkelanjutan terhadap performa investasi dan implementasi strategi perbaikan.</p>
+                        <ul class="service-features">
+                            <li>KPI monitoring</li>
+                            <li>Financial performance tracking</li>
+                            <li>Risk monitoring</li>
+                            <li>Compliance monitoring</li>
+                            <li>Performance reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🤝</div>
+                    <div class="service-content">
+                        <h4>Strategic Partnership</h4>
+                        <p>Membangun kemitraan strategis dengan investor, lembaga keuangan, dan mitra bisnis.</p>
+                        <ul class="service-features">
+                            <li>Investor relations</li>
+                            <li>Partnership development</li>
+                            <li>Joint venture structuring</li>
+                            <li>M&A advisory</li>
+                            <li>Exit strategy planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section approach-section">
+        <div class="container">
+            <h3>Pendekatan Investasi Kami</h3>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <h4>Analisis Mendalam</h4>
+                    <p>Melakukan analisis komprehensif terhadap semua aspek proyek untuk memastikan kelayakan investasi.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <h4>Manajemen Risiko</h4>
+                    <p>Menerapkan strategi manajemen risiko yang ketat untuk melindungi investasi dan memastikan keberhasilan.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <h4>Optimasi Struktur</h4>
+                    <p>Merancang struktur pembiayaan yang optimal untuk memaksimalkan return on investment.</p>
+                </div>
+                
+                <div class="approach-card">
+                    <h4>Monitoring Berkelanjutan</h4>
+                    <p>Memantau performa investasi secara berkelanjutan dan melakukan penyesuaian strategi jika diperlukan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section portfolio-section">
+        <div class="container">
+            <h3>Portfolio Investasi</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        🏭
+                        <div class="portfolio-badge">Manufaktur</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Pabrik Petrokimia Terintegrasi</h4>
+                        <p>Investasi dalam pembangunan pabrik petrokimia skala besar dengan teknologi terkini.</p>
+                        <div class="portfolio-stats">
+                            <div class="portfolio-stat">
+                                <div class="number">$150M</div>
+                                <div class="label">Nilai Investasi</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="number">18%</div>
+                                <div class="label">ROI Tahunan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        ⚡
+                        <div class="portfolio-badge">Energi</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Pembangkit Listrik Tenaga Gas</h4>
+                        <p>Investasi dalam pembangkit listrik dengan teknologi combined cycle yang efisien.</p>
+                        <div class="portfolio-stats">
+                            <div class="portfolio-stat">
+                                <div class="number">$200M</div>
+                                <div class="label">Nilai Investasi</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="number">15%</div>
+                                <div class="label">ROI Tahunan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        🏢
+                        <div class="portfolio-badge">Infrastruktur</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Gedung Perkantoran Premium</h4>
+                        <p>Investasi dalam pengembangan gedung perkantoran dengan sertifikasi green building.</p>
+                        <div class="portfolio-stats">
+                            <div class="portfolio-stat">
+                                <div class="number">$80M</div>
+                                <div class="label">Nilai Investasi</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="number">12%</div>
+                                <div class="label">ROI Tahunan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section risk-section">
+        <div class="container">
+            <h3>Manajemen Risiko</h3>
+            <div class="risk-grid">
+                <div class="risk-card">
+                    <div class="risk-image">📊</div>
+                    <div class="risk-info">
+                        <h4>Risk Assessment</h4>
+                        <p>Identifikasi dan analisis risiko investasi secara komprehensif untuk mitigasi yang tepat.</p>
+                    </div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-image">🛡️</div>
+                    <div class="risk-info">
+                        <h4>Risk Mitigation</h4>
+                        <p>Implementasi strategi mitigasi risiko untuk melindungi investasi dari potensi kerugian.</p>
+                    </div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-image">📈</div>
+                    <div class="risk-info">
+                        <h4>Risk Monitoring</h4>
+                        <p>Pemantauan berkelanjutan terhadap risiko investasi dan penyesuaian strategi.</p>
+                    </div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-image">📋</div>
+                    <div class="risk-info">
+                        <h4>Risk Reporting</h4>
+                        <p>Pelaporan risiko investasi secara berkala kepada stakeholder dan investor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section cta-section">
+        <div class="container">
+            <h3>Siap Berinvestasi Bersama Kami?</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Konsultasikan rencana investasi Anda dengan tim ahli kami dan dapatkan solusi terbaik.</p>
+            <a href="contact.html" class="cta-btn">Konsultasi Investasi</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PT Arista Multi Sanjaya. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html> 
